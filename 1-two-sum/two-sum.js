@@ -13,4 +13,5 @@ var twoSum = function(nums, target) {
             obj[n] = i;
         }
     }
+    console.log(obj)
 };
