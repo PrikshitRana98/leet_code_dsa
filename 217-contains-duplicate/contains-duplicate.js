@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-     let seen = new Set();
+      let seen = new Set();
     for (let num of nums) {
         if (seen.has(num)) {
             return true;
@@ -12,4 +12,5 @@ var containsDuplicate = function(nums) {
     }
     return false;
 }
+
    
