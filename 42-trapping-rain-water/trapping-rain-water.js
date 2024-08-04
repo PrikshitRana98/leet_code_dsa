@@ -18,14 +18,13 @@ var trap = function(height) {
         left.push(l_max);
         right.unshift(r_max)
     }
-    console.log(left)
-    console.log('r---<',right)
+    
     let res=0
-    let res_a=[]
+    
     for(let i=0;i<=height.length-1;i++){
-        res_a.push(Math.min(left[i],right[i])-height[i])
+        
         res+=Math.min(left[i],right[i])-height[i]
     }
-    console.log(res_a)
+    
     return res
 };
