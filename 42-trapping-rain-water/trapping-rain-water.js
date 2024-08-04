@@ -7,16 +7,16 @@ var trap = function(height) {
         return 0
     }
 
-    let left=[];
-    let right=[];
+    let left=new Array(height.length).fill(0);
+    let right=new Array(height.length).fill(0);
     let l_max=0;
     let r_max=0 
 
     for(let i=0;i<=height.length-1;i++){
         l_max=Math.max(height[i],l_max)
         r_max=Math.max(height[height.length-1-i],r_max)
-        left.push(l_max);
-        right.unshift(r_max)
+        left[i]=l_max;
+        right[height.length-1-i]=r_max
     }
     
     let res=0
