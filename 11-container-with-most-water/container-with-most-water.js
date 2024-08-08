@@ -7,7 +7,7 @@ var maxArea = function(height) {
     let l=0; let r=height.length-1
 
     while(l<r){
-        let water=Math.min(height[l],height[r])*(r-l)
+        let water=height[l]>height[r]?height[r]*(r-l):height[l]*(r-l)
         
         if(water>res){
             res=water
