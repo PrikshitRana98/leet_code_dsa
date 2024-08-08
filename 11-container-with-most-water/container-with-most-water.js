@@ -3,24 +3,29 @@
  * @return {number}
  */
 var maxArea = function(height) {
-    let res=0
-    let l=0; let r=height.length-1
+     let left = 0; // Initialize left pointer at the beginning of the array
+    let right = height.length - 1; // Initialize right pointer at the end of the array
+    let maxArea = 0; // Variable to store the maximum area
 
-    while(l<=r){
-        let water=Math.min(height[l],height[r])*(r-l)
-        console.log(water)
-        if(water>res){
-            res=water
+    // Iterate while left pointer is less than right pointer
+    while (left < right) {
+        // Calculate the current area
+        const width = right - left;
+        const currentHeight = Math.min(height[left], height[right]);
+        const currentArea = width * currentHeight;
+
+        // Update the maximum area if the current area is greater
+        maxArea = Math.max(maxArea, currentArea);
+
+        // Move the pointer pointing to the shorter line towards the center
+        if (height[left] < height[right]) {
+            left++;
+        } else {
+            right--;
         }
-        if(height[l]<height[r]){
-            l++
-        }else{
-            r--
-        }
-        
     }
-    
 
-    return res
+    return maxArea; // Return the maximum area
+
     
 };
